@@ -1,0 +1,182 @@
+[
+  {
+    "title": "Agents & Agent Orchestration, MCP, Skills, Context, Prompt & Harness Engineering 🤯: What, When, Where, How?",
+    "tags": ["ai", "learning", "agents"],
+    "date": "Jun 2026",
+    "reactions": 10,
+    "comments": 0,
+    "excerpt": "If you are like me, you are overwhelmed 🤯.  The way we build software has always shifted, and as...",
+    "devtoUrl": "https://dev.to/anishamalde/agents-agent-orchestration-mcp-skills-context-prompt-harness-engineering-what-when-504b",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxe53e13idaj0fgkobvxg.png"
+  },
+  {
+    "title": "To Share or Not to Share: Building for multi-platform",
+    "tags": ["reactnative", "react", "tv", "agentskills"],
+    "date": "Apr 2026",
+    "reactions": 21,
+    "comments": 0,
+    "excerpt": "\"To share, or not to share, that is the question.\" - Shakespeare, if he'd been a React Native...",
+    "devtoUrl": "https://dev.to/amazonappdev/to-share-or-not-to-share-taking-your-vega-app-multi-platform-mb5",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmpw9x8rkfxngjw5vt3bz.png"
+  },
+  {
+    "title": "🎵 On the 12 Days of Christmas, Amazon Developer gave to me... 🎵",
+    "tags": ["aws", "ai", "javascript"],
+    "date": "Jan 2026",
+    "reactions": 13,
+    "comments": 1,
+    "excerpt": "Made a New Year's resolution to learn something new? We've got you covered!  Back in December, our...",
+    "devtoUrl": "https://dev.to/amazonappdev/on-the-12-days-of-christmas-amazon-developer-gave-to-me-i3o",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkwlt77882bu7saqvjs6j.png"
+  },
+  {
+    "title": "The hidden costs in your package.json",
+    "tags": ["javascript", "react", "reactnative", "npm"],
+    "date": "Jul 2025",
+    "reactions": 59,
+    "comments": 9,
+    "excerpt": "How do you choose what goes in your package.json?   Is it based on what the team’s used...",
+    "devtoUrl": "https://dev.to/amazonappdev/the-hidden-costs-in-your-pacakgejson-52jo",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F5d8irqbfbu9yulugo61a.png"
+  },
+  {
+    "title": "An Android Developer's Guide to React Native",
+    "tags": ["android", "react", "reactnative", "beginners"],
+    "date": "Mar 2025",
+    "reactions": 69,
+    "comments": 7,
+    "excerpt": "Thinking of transitioning from Android to React Native? Hopefully this guide will help with the...",
+    "devtoUrl": "https://dev.to/amazonappdev/an-android-developers-guide-to-react-native-j66",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fkqi5v34jltvltwxz1yfx.png"
+  },
+  {
+    "title": "How does React Native's New Architecture affect performance?",
+    "tags": ["reactnative", "performance", "react"],
+    "date": "Feb 2025",
+    "reactions": 91,
+    "comments": 7,
+    "excerpt": "What is the New architecture?   React Native's new architecture was introduced in version...",
+    "devtoUrl": "https://dev.to/amazonappdev/how-does-react-natives-new-architecture-affect-performance-1dkf",
+    "coverImage": null
+  },
+  {
+    "title": "My React(Native) New Years Resolutions",
+    "tags": ["react", "reactnative", "javascript", "typescript"],
+    "date": "Dec 2024",
+    "reactions": 21,
+    "comments": 3,
+    "excerpt": "As we approach 2025, here are seven promises (not the async kind) that I'm making to myself to help...",
+    "devtoUrl": "https://dev.to/anishamalde/my-reactnative-new-years-resolutions-mgm",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fog5rw6f4c58g327ndpjv.png"
+  },
+  {
+    "title": "How to develop a React Native TV App",
+    "tags": ["reactnative", "react", "javascript", "beginners"],
+    "date": "Dec 2024",
+    "reactions": 25,
+    "comments": 2,
+    "excerpt": "By Anisha Malde &amp; Karol Latusek   If you are reading this article, you are likely...",
+    "devtoUrl": "https://dev.to/amazonappdev/how-to-develop-a-react-native-app-for-tv-4njp",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fqbs8bl55vu0uxo9ey1lh.png"
+  },
+  {
+    "title": "Journeying from React to React Native: Differences & Similarities",
+    "tags": ["react", "reactnative", "javascript", "frontend"],
+    "date": "Oct 2024",
+    "reactions": 82,
+    "comments": 4,
+    "excerpt": "As a React / JS developer, you’ve probably had the thought: \"Should I learn React Native?\"  It’s a...",
+    "devtoUrl": "https://dev.to/amazonappdev/journeying-from-react-to-react-native-21ep",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fk9lyhjv4wpywvtv1xhli.png"
+  },
+  {
+    "title": "5 Ways Of Managing Focus In React Native",
+    "tags": ["react", "reactnative", "tv", "javascript"],
+    "date": "Sep 2024",
+    "reactions": 29,
+    "comments": 2,
+    "excerpt": "When it comes to handling Focus Management in React Native for TV apps, developers may find...",
+    "devtoUrl": "https://dev.to/amazonappdev/5-ways-of-managing-focus-in-react-native-3kfd",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgsj85sxgi8qbgtaitebm.png"
+  },
+  {
+    "title": "How to become an Amazon Developer",
+    "tags": ["beginners", "amazon", "aws", "javascript"],
+    "date": "Jul 2024",
+    "reactions": 92,
+    "comments": 11,
+    "excerpt": "When I tell people I work at Amazon I usually get asked 2 questions:   Can I have a free Prime...",
+    "devtoUrl": "https://dev.to/anishamalde/how-to-become-an-amazon-developer-j4f",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjm4u8t7tevr1y1g4my9n.png"
+  },
+  {
+    "title": "From JS to Fire OS: React Native for Amazon Devices",
+    "tags": ["reactnative", "beginners", "react", "learning"],
+    "date": "Jul 2024",
+    "reactions": 40,
+    "comments": 2,
+    "excerpt": "React Native enables developers to build native apps for Amazon Fire OS devices using their existing...",
+    "devtoUrl": "https://dev.to/amazonappdev/get-started-with-react-native-for-amazon-fire-os-51j8",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fx45a9pl6qk9ei9x2bssz.png"
+  },
+  {
+    "title": "A Love Letter to Gen Z from Gen Y: Understanding React's Evolution",
+    "tags": ["react", "webdev", "javascript"],
+    "date": "Apr 2024",
+    "reactions": 86,
+    "comments": 33,
+    "excerpt": "Now, before I get cancelled, let me explain 😅 I'm on the cusp of the boundary between Gen Y and Gen Z...",
+    "devtoUrl": "https://dev.to/anishamalde/a-love-letter-to-gen-z-from-gen-y-understanding-reacts-evolution-4abm",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxsdkmi35dnuzdogti505.jpg"
+  },
+  {
+    "title": "How to monetize Kotlin apps with Amazon",
+    "tags": ["amazon", "kotlin", "monetisation"],
+    "date": "Feb 2024",
+    "reactions": 11,
+    "comments": 0,
+    "excerpt": "What’s the secret to making bank from your Android app? Publishing on Amazon Appstore! By doing so...",
+    "devtoUrl": "https://dev.to/amazonappdev/how-to-monetize-kotlin-apps-with-amazon-4gig",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fmcykf3jujl46jxsqmu3f.png"
+  },
+  {
+    "title": "A guide to Turbo Modules in React Native",
+    "tags": ["react", "reactnative", "native"],
+    "date": "Jul 2023",
+    "reactions": 84,
+    "comments": 16,
+    "excerpt": "As a React Native developer, I appreciate the flexibility that comes from the framework's...",
+    "devtoUrl": "https://dev.to/amazonappdev/a-guide-to-turbo-modules-in-react-native-5aa3",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffbn4e7eo10c475v1ble2.png"
+  },
+  {
+    "title": "My 5 favourite updates from the new React documentation",
+    "tags": ["react", "frontend", "webdev"],
+    "date": "Mar 2023",
+    "reactions": 171,
+    "comments": 28,
+    "excerpt": "So you read the article title and are probably asking yourself “How can she possibly have a favourite...",
+    "devtoUrl": "https://dev.to/anishamalde/my-5-favourite-updates-from-the-new-react-documentation-f69",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr7q2sy5tq5qvbyde8ex8.png"
+  },
+  {
+    "title": "Implement pending purchases with Amazon IAP",
+    "tags": ["tutorial", "amazon", "iap", "kotlin"],
+    "date": "Mar 2023",
+    "reactions": 5,
+    "comments": 0,
+    "excerpt": "What if I told you that as a developer you can provide parents with the peace of mind to never...",
+    "devtoUrl": "https://dev.to/amazonappdev/implement-pending-purchases-with-amazon-iap-4o8l",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fc9e8710uu5jecfb760hd.png"
+  },
+  {
+    "title": "React-Native-IAP: One package to rule them all 🧙‍♂️",
+    "tags": ["amazon", "iap", "monetisation"],
+    "date": "Feb 2023",
+    "reactions": 30,
+    "comments": 0,
+    "excerpt": "React Native developers often face the problem of adding native support for multiple operating...",
+    "devtoUrl": "https://dev.to/amazonappdev/react-native-iap-one-package-to-rule-them-all-4f0n",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fc1cmtfigwnumovd25cym.png"
+  }
+]
