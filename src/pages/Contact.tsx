@@ -7,7 +7,7 @@ export function Contact() {
     const body = encodeURIComponent(
       `From: ${data.get('name')} <${data.get('email')}>\n\n${data.get('message')}`,
     );
-    window.location.href = `mailto:hello@anisha.dev?subject=Note%20from%20anisha.dev&body=${body}`;
+    window.location.href = `mailto:anishamalde95%2Bsite@gmail.com?subject=Note%20from%20anisha.dev&body=${body}`;
   };
 
   return (
@@ -17,7 +17,7 @@ export function Contact() {
 
       <div className="grid-3" style={{ marginBottom: 44 }}>
         <a
-          href="mailto:hello@anisha.dev?subject=Speaking%20invite"
+          href="mailto:anishamalde95%2Bsite@gmail.com?subject=Speaking%20invite"
           className="contact-card"
         >
           <div className="contact-swatch contact-swatch--pink" />
@@ -27,7 +27,7 @@ export function Contact() {
           </div>
         </a>
         <a
-          href="mailto:hello@anisha.dev?subject=Sponsorship%20inquiry"
+          href="mailto:anishamalde95%2Bsite@gmail.com?subject=Sponsorship%20inquiry"
           className="contact-card"
         >
           <div className="contact-swatch contact-swatch--orange" />
@@ -36,7 +36,7 @@ export function Contact() {
             Workshops, sample-app collabs, or content partnerships with your dev tools.
           </div>
         </a>
-        <a href="mailto:hello@anisha.dev?subject=Say%20hello" className="contact-card">
+        <a href="mailto:anishamalde95%2Bsite@gmail.com?subject=Say%20hello" className="contact-card">
           <div className="contact-swatch contact-swatch--yellow" />
           <div className="contact-card__title">General collab</div>
           <div className="contact-card__body">
