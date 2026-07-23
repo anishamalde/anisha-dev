@@ -1,7 +1,26 @@
 [
   {
+    "title": "Building a Dev Content Strategy that survives Monday",
+    "tags": [
+      "devrel",
+      "career",
+      "writing",
+      "ai"
+    ],
+    "date": "Jul 2026",
+    "reactions": 6,
+    "comments": 0,
+    "excerpt": "With AI making it easier than ever to publish anything we're all drowning in content and a lot of the...",
+    "devtoUrl": "https://dev.to/anishamalde/building-a-dev-content-strategy-that-survives-monday-18o5",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F0eyhxm5zkpges6z57xm1.png"
+  },
+  {
     "title": "Agents & Agent Orchestration, MCP, Skills, Context, Prompt & Harness Engineering 🤯: What, When, Where, How?",
-    "tags": ["ai", "learning", "agents"],
+    "tags": [
+      "ai",
+      "learning",
+      "agents"
+    ],
     "date": "Jun 2026",
     "reactions": 10,
     "comments": 0,
@@ -11,7 +30,12 @@
   },
   {
     "title": "To Share or Not to Share: Building for multi-platform",
-    "tags": ["reactnative", "react", "tv", "agentskills"],
+    "tags": [
+      "reactnative",
+      "react",
+      "tv",
+      "agentskills"
+    ],
     "date": "Apr 2026",
     "reactions": 21,
     "comments": 0,
@@ -21,7 +45,11 @@
   },
   {
     "title": "🎵 On the 12 Days of Christmas, Amazon Developer gave to me... 🎵",
-    "tags": ["aws", "ai", "javascript"],
+    "tags": [
+      "aws",
+      "ai",
+      "javascript"
+    ],
     "date": "Jan 2026",
     "reactions": 13,
     "comments": 1,
@@ -31,7 +59,12 @@
   },
   {
     "title": "The hidden costs in your package.json",
-    "tags": ["javascript", "react", "reactnative", "npm"],
+    "tags": [
+      "javascript",
+      "react",
+      "reactnative",
+      "npm"
+    ],
     "date": "Jul 2025",
     "reactions": 59,
     "comments": 9,
@@ -41,7 +74,12 @@
   },
   {
     "title": "An Android Developer's Guide to React Native",
-    "tags": ["android", "react", "reactnative", "beginners"],
+    "tags": [
+      "android",
+      "react",
+      "reactnative",
+      "beginners"
+    ],
     "date": "Mar 2025",
     "reactions": 69,
     "comments": 7,
@@ -51,7 +89,11 @@
   },
   {
     "title": "How does React Native's New Architecture affect performance?",
-    "tags": ["reactnative", "performance", "react"],
+    "tags": [
+      "reactnative",
+      "performance",
+      "react"
+    ],
     "date": "Feb 2025",
     "reactions": 91,
     "comments": 7,
@@ -61,7 +103,12 @@
   },
   {
     "title": "My React(Native) New Years Resolutions",
-    "tags": ["react", "reactnative", "javascript", "typescript"],
+    "tags": [
+      "react",
+      "reactnative",
+      "javascript",
+      "typescript"
+    ],
     "date": "Dec 2024",
     "reactions": 21,
     "comments": 3,
@@ -71,7 +118,12 @@
   },
   {
     "title": "How to develop a React Native TV App",
-    "tags": ["reactnative", "react", "javascript", "beginners"],
+    "tags": [
+      "reactnative",
+      "react",
+      "javascript",
+      "beginners"
+    ],
     "date": "Dec 2024",
     "reactions": 25,
     "comments": 2,
@@ -81,7 +133,12 @@
   },
   {
     "title": "Journeying from React to React Native: Differences & Similarities",
-    "tags": ["react", "reactnative", "javascript", "frontend"],
+    "tags": [
+      "react",
+      "reactnative",
+      "javascript",
+      "frontend"
+    ],
     "date": "Oct 2024",
     "reactions": 82,
     "comments": 4,
@@ -91,7 +148,12 @@
   },
   {
     "title": "5 Ways Of Managing Focus In React Native",
-    "tags": ["react", "reactnative", "tv", "javascript"],
+    "tags": [
+      "react",
+      "reactnative",
+      "tv",
+      "javascript"
+    ],
     "date": "Sep 2024",
     "reactions": 29,
     "comments": 2,
@@ -101,7 +163,12 @@
   },
   {
     "title": "How to become an Amazon Developer",
-    "tags": ["beginners", "amazon", "aws", "javascript"],
+    "tags": [
+      "beginners",
+      "amazon",
+      "aws",
+      "javascript"
+    ],
     "date": "Jul 2024",
     "reactions": 92,
     "comments": 11,
@@ -111,7 +178,12 @@
   },
   {
     "title": "From JS to Fire OS: React Native for Amazon Devices",
-    "tags": ["reactnative", "beginners", "react", "learning"],
+    "tags": [
+      "reactnative",
+      "beginners",
+      "react",
+      "learning"
+    ],
     "date": "Jul 2024",
     "reactions": 40,
     "comments": 2,
@@ -121,7 +193,11 @@
   },
   {
     "title": "A Love Letter to Gen Z from Gen Y: Understanding React's Evolution",
-    "tags": ["react", "webdev", "javascript"],
+    "tags": [
+      "react",
+      "webdev",
+      "javascript"
+    ],
     "date": "Apr 2024",
     "reactions": 86,
     "comments": 33,
@@ -131,7 +207,11 @@
   },
   {
     "title": "How to monetize Kotlin apps with Amazon",
-    "tags": ["amazon", "kotlin", "monetisation"],
+    "tags": [
+      "amazon",
+      "kotlin",
+      "monetisation"
+    ],
     "date": "Feb 2024",
     "reactions": 11,
     "comments": 0,
@@ -141,7 +221,11 @@
   },
   {
     "title": "A guide to Turbo Modules in React Native",
-    "tags": ["react", "reactnative", "native"],
+    "tags": [
+      "react",
+      "reactnative",
+      "native"
+    ],
     "date": "Jul 2023",
     "reactions": 84,
     "comments": 16,
@@ -151,7 +235,11 @@
   },
   {
     "title": "My 5 favourite updates from the new React documentation",
-    "tags": ["react", "frontend", "webdev"],
+    "tags": [
+      "react",
+      "frontend",
+      "webdev"
+    ],
     "date": "Mar 2023",
     "reactions": 171,
     "comments": 28,
@@ -161,7 +249,12 @@
   },
   {
     "title": "Implement pending purchases with Amazon IAP",
-    "tags": ["tutorial", "amazon", "iap", "kotlin"],
+    "tags": [
+      "tutorial",
+      "amazon",
+      "iap",
+      "kotlin"
+    ],
     "date": "Mar 2023",
     "reactions": 5,
     "comments": 0,
@@ -171,7 +264,11 @@
   },
   {
     "title": "React-Native-IAP: One package to rule them all 🧙‍♂️",
-    "tags": ["amazon", "iap", "monetisation"],
+    "tags": [
+      "amazon",
+      "iap",
+      "monetisation"
+    ],
     "date": "Feb 2023",
     "reactions": 30,
     "comments": 0,

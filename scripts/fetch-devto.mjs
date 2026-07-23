@@ -1,58 +1,84 @@
 #!/usr/bin/env node
-// Fetch published articles from dev.to and write a typed JSON snapshot
-// consumed by src/data.ts at build time. Run: `npm run refresh:posts`.
+// Refresh reaction / comment counts on existing posts in src/blog-posts.json
+// against the dev.to API. Never adds, removes, or reorders posts — the JSON
+// is the source of truth for what appears on the site. New posts on dev.to
+// are reported at the end so they can be added manually.
+//
+// Run: `npm run refresh:posts`.
 
-import { writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { readFile, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
 
-const USERNAME = process.env.DEVTO_USERNAME || 'anishamalde';
+const USERNAME = process.env.DEVTO_USERNAME || "anishamalde";
 const PER_PAGE = 30;
 
 const here = dirname(fileURLToPath(import.meta.url));
-const outPath = resolve(here, '..', 'src', 'blog-posts.json');
-
-const monthShort = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-];
-
-function formatDate(iso) {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return '';
-  return `${monthShort[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
-}
+const jsonPath = resolve(here, "..", "src", "blog-posts.json");
 
 async function main() {
+  const existingRaw = await readFile(jsonPath, "utf8");
+  const existing = JSON.parse(existingRaw);
+  if (!Array.isArray(existing)) {
+    throw new Error(`unexpected shape in ${jsonPath}`);
+  }
+
   const url = `https://dev.to/api/articles?username=${encodeURIComponent(USERNAME)}&per_page=${PER_PAGE}`;
-  const res = await fetch(url, {
-    headers: { accept: 'application/json' },
-  });
+  const res = await fetch(url, { headers: { accept: "application/json" } });
   if (!res.ok) {
     throw new Error(`dev.to fetch failed: ${res.status} ${res.statusText}`);
   }
-
-  const articles = await res.json();
-  if (!Array.isArray(articles)) {
-    throw new Error('unexpected dev.to response shape');
+  const remote = await res.json();
+  if (!Array.isArray(remote)) {
+    throw new Error("unexpected dev.to response shape");
   }
 
-  const posts = articles.map((a) => ({
-    title: a.title,
-    tags: Array.isArray(a.tag_list) ? a.tag_list : [],
-    date: formatDate(a.published_timestamp),
-    reactions: a.public_reactions_count ?? 0,
-    comments: a.comments_count ?? 0,
-    excerpt: (a.description ?? '').trim(),
-    devtoUrl: a.url,
-    coverImage: a.cover_image ?? null,
-  }));
+  const remoteByUrl = new Map(remote.map((a) => [a.url, a]));
+  const matchedUrls = new Set();
 
-  await writeFile(outPath, `${JSON.stringify(posts, null, 2)}\n`);
-  console.log(`✓ wrote ${posts.length} posts to ${outPath}`);
+  let updatedCount = 0;
+  const updated = existing.map((post) => {
+    const match = remoteByUrl.get(post.devtoUrl);
+    if (!match) return post;
+    matchedUrls.add(post.devtoUrl);
+
+    const nextReactions = match.public_reactions_count ?? post.reactions;
+    const nextComments = match.comments_count ?? post.comments;
+    if (nextReactions === post.reactions && nextComments === post.comments) {
+      return post;
+    }
+    updatedCount += 1;
+    return { ...post, reactions: nextReactions, comments: nextComments };
+  });
+
+  await writeFile(jsonPath, `${JSON.stringify(updated, null, 2)}\n`);
+
+  console.log(
+    `stats refreshed for ${updatedCount} of ${existing.length} posts`,
+  );
+
+  const missing = existing.filter((p) => !matchedUrls.has(p.devtoUrl));
+  if (missing.length > 0) {
+    console.log("");
+    console.log(
+      `${missing.length} post(s) in JSON not found on dev.to (title changed? unpublished?):`,
+    );
+    for (const p of missing) console.log(`  - ${p.title} (${p.devtoUrl})`);
+  }
+
+  const newOnDevto = remote.filter(
+    (a) => !existing.some((p) => p.devtoUrl === a.url),
+  );
+  if (newOnDevto.length > 0) {
+    console.log("");
+    console.log(
+      `${newOnDevto.length} new post(s) on dev.to not in JSON (add manually if wanted):`,
+    );
+    for (const a of newOnDevto) console.log(`  - ${a.title}\n    ${a.url}`);
+  }
 }
 
 main().catch((err) => {
-  console.error('✗ fetch-devto failed:', err.message);
+  console.error("refresh:posts failed:", err.message);
   process.exit(1);
 });
