@@ -1,5 +1,20 @@
 [
   {
+    "title": "OpenIAP adds supports for Amazon",
+    "tags": [
+      "iap",
+      "reactnative",
+      "expo",
+      "amazon"
+    ],
+    "date": "Oct 2026",
+    "reactions": 0,
+    "comments": 0,
+    "excerpt": "We're excited to announce that Amazon is sponsoring OpenIAP, which now supports in-app purchasing...",
+    "devtoUrl": "https://dev.to/amazonappdev/openiap-adds-supports-for-amazon-33b",
+    "coverImage": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F9sax62taswbzd015e71a.png"
+  },
+  {
     "title": "Building a Dev Content Strategy that survives Monday",
     "tags": [
       "devrel",
@@ -8,7 +23,7 @@
       "ai"
     ],
     "date": "Jul 2026",
-    "reactions": 6,
+    "reactions": 11,
     "comments": 0,
     "excerpt": "With AI making it easier than ever to publish anything we're all drowning in content and a lot of the...",
     "devtoUrl": "https://dev.to/anishamalde/building-a-dev-content-strategy-that-survives-monday-18o5",
@@ -37,7 +52,7 @@
       "agentskills"
     ],
     "date": "Apr 2026",
-    "reactions": 21,
+    "reactions": 22,
     "comments": 0,
     "excerpt": "\"To share, or not to share, that is the question.\" - Shakespeare, if he'd been a React Native...",
     "devtoUrl": "https://dev.to/amazonappdev/to-share-or-not-to-share-taking-your-vega-app-multi-platform-mb5",
@@ -170,7 +185,7 @@
       "javascript"
     ],
     "date": "Jul 2024",
-    "reactions": 92,
+    "reactions": 96,
     "comments": 11,
     "excerpt": "When I tell people I work at Amazon I usually get asked 2 questions:   Can I have a free Prime...",
     "devtoUrl": "https://dev.to/anishamalde/how-to-become-an-amazon-developer-j4f",
@@ -227,7 +242,7 @@
       "native"
     ],
     "date": "Jul 2023",
-    "reactions": 84,
+    "reactions": 87,
     "comments": 16,
     "excerpt": "As a React Native developer, I appreciate the flexibility that comes from the framework's...",
     "devtoUrl": "https://dev.to/amazonappdev/a-guide-to-turbo-modules-in-react-native-5aa3",

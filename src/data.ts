@@ -72,6 +72,31 @@ export const BLOG_POSTS: BlogPost[] = blogPostsData as BlogPost[];
 
 export const TALKS: Talk[] = [
   {
+    title: "Build Once, Watch Everywhere",
+    venue: "next.app devcon",
+    year: "2026",
+    blurb:
+      "A hands-on session on building a React Native app for TVs. Share a single codebase across Vega OS, Android TV, Web, and Apple TV, then layer in platform-specific dependencies for Fire TV to optimize for the Amazon Appstore and its hundreds of millions of devices.",
+    slidesUrl: "",
+    videoUrl: "",
+    grewFromPost: false,
+    significance: 10,
+    kind: "workshop",
+  },
+  {
+    title: "Agents FC: Harness Agents Into a Winning Team",
+    venue: "Agent Conf",
+    year: "2026",
+    blurb:
+      "Co-presented with Kourtney Meiss — how to harness AI agents into a team that actually ships, from orchestration to the guardrails that keep them on the pitch.",
+    slidesUrl: "",
+    videoUrl: "https://www.youtube.com/watch?v=vss3ra7FKTE",
+    grewFromPost: false,
+    significance: 10,
+    kind: "talk",
+    coSpeaker: "Kourtney Meiss",
+  },
+  {
     title: "The Generations of React",
     venue: "React Universe Conf",
     year: "2025",
@@ -212,20 +237,7 @@ export const TALKS: Talk[] = [
   },
 ];
 
-export const UPCOMING_TALKS: UpcomingTalk[] = [
-  {
-    title: "React Native at Scale",
-    venue: "next.app devcon",
-    date: "Oct 7–9 2026",
-    location: "Berlin, Germany",
-  },
-  {
-    title: "Agents FC: Harnessing your agents into a winning team",
-    venue: "Agent Conf 2026",
-    date: "Sep 17–18 2026",
-    location: "Warsaw, Poland",
-  },
-];
+export const UPCOMING_TALKS: UpcomingTalk[] = [];
 
 export const PROJECTS: Project[] = [
   {

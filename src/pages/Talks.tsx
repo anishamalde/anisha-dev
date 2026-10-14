@@ -86,19 +86,18 @@ export function Talks() {
     <div className="page page--narrow">
       <h1 className="h1">Talks</h1>
 
-      {UPCOMING_TALKS.length > 0 && (
-        <>
-          <h2 className="eyebrow">Upcoming</h2>
-          {UPCOMING_TALKS.map((talk) => (
-            <TalkItem key={talk.title} {...fromUpcoming(talk)} />
-          ))}
-        </>
+      <h2 className="eyebrow">Upcoming</h2>
+      {UPCOMING_TALKS.length > 0 ? (
+        UPCOMING_TALKS.map((talk) => (
+          <TalkItem key={talk.title} {...fromUpcoming(talk)} />
+        ))
+      ) : (
+        <div className="talk-item">
+          <div className="talk-item__title">Working on submitting CFPs</div>
+        </div>
       )}
 
-      <h2
-        className="eyebrow"
-        style={{ marginTop: UPCOMING_TALKS.length > 0 ? 40 : 0 }}
-      >
+      <h2 className="eyebrow" style={{ marginTop: 40 }}>
         Past
       </h2>
       {TALKS.map((talk) => (
