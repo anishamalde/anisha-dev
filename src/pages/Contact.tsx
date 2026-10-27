@@ -11,7 +11,7 @@ export function Contact() {
   };
 
   return (
-    <div className="page page--narrow">
+    <div className="page">
       <h1 className="h1">Contact &amp; collab</h1>
       <p className="section-lead">Pick the one that fits — it helps me reply faster.</p>
 

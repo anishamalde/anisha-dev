@@ -2,7 +2,7 @@ import { EDUCATION, TIMELINE } from '../data';
 
 export function About() {
   return (
-    <div className="page page--narrower">
+    <div className="page">
       <h1 className="h1">About</h1>
       <p className="about-lead">
         I&rsquo;m a Developer Advocate at Amazon Devices, based in London. I lead the DevRel
