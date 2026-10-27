@@ -315,14 +315,6 @@ export const PROJECTS: Project[] = [
     role: "maintainer",
   },
   {
-    name: "vega-0.83-upgrade-workshop",
-    oneLiner:
-      "A hands-on workshop for upgrading a React Native app to 0.83 on Vega, using the Amazon Devices Builder Tools MCP. Covers the React Compiler, React Native DevTools, and Hermes v1.",
-    stack: ["React Native", "Vega", "React Compiler", "Hermes"],
-    githubUrl: "https://github.com/anishamalde/vega-0.83-upgrade-workshop",
-    role: "author",
-  },
-  {
     name: "NextApp-Workshop",
     oneLiner:
       "A workshop and reference app for building one React Native TV codebase that runs on Fire TV (Vega), Android TV, Apple TV, and the web. Built for NextAppCon Berlin.",
