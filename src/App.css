@@ -4,12 +4,6 @@
   margin: 0 auto;
   padding: 56px 32px 72px;
 }
-.page--narrow {
-  max-width: var(--page-narrow);
-}
-.page--narrower {
-  max-width: var(--page-narrower);
-}
 @media (max-width: 640px) {
   .page {
     padding: 40px 20px 56px;
@@ -810,6 +804,37 @@
 }
 .about-lead:last-of-type {
   margin-bottom: 40px;
+}
+.vega-samples {
+  margin: 0 0 28px;
+}
+.vega-samples__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.vega-samples__chips a {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--bg-elev);
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.vega-samples__chips a:hover {
+  border-color: var(--accent);
+}
+.code-note {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 24px;
 }
 .about-list {
   list-style: none;

@@ -22,8 +22,6 @@
   --border-input: rgba(255, 255, 255, 0.14);
 
   --page-max: 1120px;
-  --page-narrow: 900px;
-  --page-narrower: 820px;
 
   --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;

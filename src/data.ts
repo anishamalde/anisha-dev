@@ -239,6 +239,55 @@ export const TALKS: Talk[] = [
 
 export const UPCOMING_TALKS: UpcomingTalk[] = [];
 
+export const VEGA_SAMPLES: {
+  name: string;
+  githubUrl: string;
+  oneLiner: string;
+}[] = [
+  {
+    name: "vega-tv-interfaces-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-tv-interfaces-sample",
+    oneLiner:
+      "The recommended approaches for building TV-focused interfaces with React Native on Vega OS.",
+  },
+  {
+    name: "vega-video-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-video-sample",
+    oneLiner:
+      "A W3C media player sample covering the core multimedia functionality for Vega: interactive screens, a video player, search, and focus management.",
+  },
+  {
+    name: "vega-audio-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-audio-sample",
+    oneLiner:
+      "A music player sample with album details, track lists, home, search, library, and settings screens for Vega.",
+  },
+  {
+    name: "vega-epg-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-epg-sample",
+    oneLiner:
+      "A Vega sample showing how to use the EPG (Electronic Program Guide) components to build a TV guide experience.",
+  },
+  {
+    name: "vega-scrolling-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-scrolling-sample",
+    oneLiner:
+      "A Vega sample showing how to build a scrolling home page grid layout using Vega UI components.",
+  },
+  {
+    name: "vega-seekbar-sample",
+    githubUrl: "https://github.com/AmazonAppDev/vega-seekbar-sample",
+    oneLiner:
+      "A Vega sample showing how to implement advanced seek bar functionality with TV-optimised interactions.",
+  },
+  {
+    name: "vega-sports-app",
+    githubUrl: "https://github.com/AmazonAppDev/vega-sports-app",
+    oneLiner:
+      "A sample sports app showing how to change the theming and integrate your own content catalog and services.",
+  },
+];
+
 export const PROJECTS: Project[] = [
   {
     name: "react-native-multi-tv-helloworld",
@@ -250,12 +299,76 @@ export const PROJECTS: Project[] = [
     role: "maintainer",
   },
   {
+    name: "vega-workshops",
+    oneLiner:
+      "Hands-on React Native workshops for Vega, with AI agent prompts and the Amazon Devices Builder Tools MCP.",
+    stack: ["React Native", "Workshops", "AI", "MCP"],
+    githubUrl: "https://github.com/AmazonAppDev/vega-workshops",
+    role: "maintainer",
+  },
+  {
     name: "devices-agent-skills",
     oneLiner:
       "A collection of Amazon Devices community Agent Skills — packaged workflows that give AI assistants specialised knowledge for Vega OS migrations and TV UI patterns.",
     stack: ["Agent Skills", "AI", "TV"],
     githubUrl: "https://github.com/AmazonAppDev/devices-agent-skills",
     role: "maintainer",
+  },
+  {
+    name: "vega-0.83-upgrade-workshop",
+    oneLiner:
+      "A hands-on workshop for upgrading a React Native app to 0.83 on Vega, using the Amazon Devices Builder Tools MCP. Covers the React Compiler, React Native DevTools, and Hermes v1.",
+    stack: ["React Native", "Vega", "React Compiler", "Hermes"],
+    githubUrl: "https://github.com/anishamalde/vega-0.83-upgrade-workshop",
+    role: "author",
+  },
+  {
+    name: "NextApp-Workshop",
+    oneLiner:
+      "A workshop and reference app for building one React Native TV codebase that runs on Fire TV (Vega), Android TV, Apple TV, and the web. Built for NextAppCon Berlin.",
+    stack: ["React Native", "TV", "Vega", "Monorepo"],
+    githubUrl: "https://github.com/anishamalde/NextApp-Workshop",
+    role: "author",
+  },
+  {
+    name: "spooky-story-maker",
+    oneLiner:
+      "A Halloween build-your-own-story app for TV. A web app with a cached ElevenLabs narrator, wrapped for Vega OS in a WebView.",
+    stack: ["Web", "WebView", "Vega", "ElevenLabs"],
+    githubUrl: "https://github.com/anishamalde/spooky-story-maker",
+    role: "author",
+  },
+  {
+    name: "ring-demo-accessdropai",
+    oneLiner:
+      "AccessDrop AI: accessible doorstep delivery on Ring and Alexa+. Live transcription for deaf customers and spoken guidance for blind customers. Hackathon submission.",
+    stack: ["Ring", "Alexa+", "Amazon Transcribe", "Amazon Polly"],
+    githubUrl: "https://github.com/anishamalde/ring-demo-accessdropai",
+    role: "author",
+  },
+  {
+    name: "AgentsFC",
+    oneLiner:
+      "A football-themed visualisation of multi-agent orchestration, the demo behind the Agents FC talk at AgentConf.",
+    stack: ["AI", "Agents", "Orchestration"],
+    githubUrl: "https://github.com/anishamalde/AgentsFC",
+    role: "author",
+  },
+  {
+    name: "restaurant-agent",
+    oneLiner:
+      "A personal restaurant-recommendation agent on WhatsApp, built on Amazon Bedrock AgentCore (harness, Gateway, memory) with Google Maps. Demo for a talk on harness engineering.",
+    stack: ["Python", "AgentCore", "WhatsApp", "AI"],
+    githubUrl: "https://github.com/anishamalde/restaurant-agent",
+    role: "author",
+  },
+  {
+    name: "ai-personal-assistant-frontend",
+    oneLiner:
+      "A React Native (Expo) front end for an AI personal assistant, with voice, camera, chat, and Amazon Polly. Built step by step for the 'Building a Personal AI Device' talk.",
+    stack: ["React Native", "Expo", "Amazon Polly", "AI"],
+    githubUrl: "https://github.com/anishamalde/ai-personal-assistant-frontend",
+    role: "author",
   },
   {
     name: "maps-MCP-extapp-demo",

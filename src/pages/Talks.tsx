@@ -83,7 +83,7 @@ function fromUpcoming(talk: UpcomingTalk): ItemProps {
 
 export function Talks() {
   return (
-    <div className="page page--narrow">
+    <div className="page">
       <h1 className="h1">Talks</h1>
 
       <h2 className="eyebrow">Upcoming</h2>
