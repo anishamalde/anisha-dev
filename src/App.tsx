@@ -14,24 +14,35 @@ import './App.css';
 
 const VALID_PAGES: PageKey[] = ['home', 'blog', 'talks', 'code', 'about', 'contact'];
 
-function readPageFromHash(): PageKey {
+// Old hash links (/#/code) still work: they're mapped to the clean path on load
+function readPageFromLocation(): PageKey {
   const hash = window.location.hash.replace(/^#\/?/, '');
-  return (VALID_PAGES as string[]).includes(hash) ? (hash as PageKey) : 'home';
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  const page = hash || path;
+  return (VALID_PAGES as string[]).includes(page) ? (page as PageKey) : 'home';
+}
+
+function pathFor(page: PageKey): string {
+  return page === 'home' ? '/' : `/${page}`;
 }
 
 function App() {
-  const [page, setPage] = useState<PageKey>(readPageFromHash);
+  const [page, setPage] = useState<PageKey>(readPageFromLocation);
 
   const navigate = useCallback((next: PageKey) => {
     setPage(next);
-    window.history.replaceState(null, '', `#/${next === 'home' ? '' : next}`);
+    window.history.pushState(null, '', pathFor(next));
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
   }, []);
 
   useEffect(() => {
-    const onHash = () => setPage(readPageFromHash());
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
+    // Replace any old hash URL with its clean path once on load
+    if (window.location.hash) {
+      window.history.replaceState(null, '', pathFor(readPageFromLocation()));
+    }
+    const onPopState = () => setPage(readPageFromLocation());
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   return (
