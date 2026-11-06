@@ -10,6 +10,7 @@ import { Code } from './pages/Code';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import type { PageKey } from './data';
+import { registerWebMcpTools } from './webmcp';
 import './App.css';
 
 const VALID_PAGES: PageKey[] = ['home', 'blog', 'talks', 'code', 'about', 'contact'];
@@ -44,6 +45,8 @@ function App() {
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
+
+  useEffect(() => registerWebMcpTools(navigate), [navigate]);
 
   return (
     <div>
