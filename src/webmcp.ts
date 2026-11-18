@@ -1,4 +1,5 @@
-import { BLOG_POSTS, NAV, PROJECTS, TALKS, type PageKey } from './data';
+import { BLOG_POSTS, NAV, PROJECTS, TALKS, UPCOMING_TALKS, VEGA_SAMPLES, type PageKey } from './data';
+import { matchesQuery, searchPosts } from './search';
 
 // WebMCP (https://github.com/webmachinelearning/webmcp) lets a page expose tools
 // to in-browser agents. The API is still a draft, so everything here is feature
@@ -8,7 +9,9 @@ type ToolResult = { content: { type: 'text'; text: string }[] };
 
 type ToolDescriptor = {
   name: string;
+  title?: string;
   description: string;
+  annotations?: { readOnlyHint?: boolean };
   inputSchema: Record<string, unknown>;
   execute: (input: Record<string, unknown>) => Promise<ToolResult> | ToolResult;
 };
@@ -28,9 +31,6 @@ const json = (value: unknown): ToolResult => ({
   content: [{ type: 'text', text: JSON.stringify(value, null, 2) }],
 });
 
-const includes = (haystack: string, needle: string) =>
-  haystack.toLowerCase().includes(needle.toLowerCase());
-
 export function registerWebMcpTools(navigate: (page: PageKey) => void): () => void {
   const modelContext = getModelContext();
   if (!modelContext) return () => {};
@@ -42,21 +42,20 @@ export function registerWebMcpTools(navigate: (page: PageKey) => void): () => vo
   const tools: ToolDescriptor[] = [
     {
       name: 'search-blog-posts',
-      description:
-        "Search Anisha Malde's blog posts (published on dev.to) by keyword in the title, excerpt or tags. Omit the query to list the latest posts.",
+      title: 'Search blog posts',
+      annotations: { readOnlyHint: true },
+      description: 'Search Anisha\'s blog posts by keyword.',
       inputSchema: {
         type: 'object',
         properties: {
-          query: { type: 'string', description: 'Keyword to match, e.g. "react native"' },
+          query: { type: 'string', description: 'Keywords to match. Every word must appear in the title, excerpt or tags, e.g. "react native tv". Omit to list the latest posts.' },
           limit: { type: 'number', description: 'Maximum results (default 10)' },
         },
       },
       execute: ({ query, limit }) => {
         const q = typeof query === 'string' ? query : '';
         const max = typeof limit === 'number' && limit > 0 ? limit : 10;
-        const results = BLOG_POSTS.filter(
-          (p) => !q || includes(p.title, q) || includes(p.excerpt, q) || p.tags.some((t) => includes(t, q)),
-        )
+        const results = searchPosts(BLOG_POSTS, q)
           .slice(0, max)
           .map(({ title, date, tags, excerpt, devtoUrl }) => ({ title, date, tags, excerpt, url: devtoUrl }));
         return json(results);
@@ -64,46 +63,58 @@ export function registerWebMcpTools(navigate: (page: PageKey) => void): () => vo
     },
     {
       name: 'list-talks',
-      description:
-        "List Anisha Malde's talks, workshops and podcasts with venue, year, and slides or video links. Optionally filter by keyword or year.",
+      title: 'List talks',
+      annotations: { readOnlyHint: true },
+      description: 'List Anisha\'s talks and workshops.',
       inputSchema: {
         type: 'object',
         properties: {
-          query: { type: 'string', description: 'Keyword to match in title, venue or blurb' },
+          query: { type: 'string', description: 'Keywords to match in title, venue or blurb' },
           year: { type: 'string', description: 'Four digit year, e.g. "2026"' },
         },
       },
       execute: ({ query, year }) => {
         const q = typeof query === 'string' ? query : '';
-        const results = TALKS.filter(
+        const past = TALKS.filter(
           (t) =>
-            (!q || includes(t.title, q) || includes(t.venue, q) || includes(t.blurb, q)) &&
+            matchesQuery([t.title, t.venue, t.blurb], q) &&
             (typeof year !== 'string' || t.year === year),
         ).map(({ title, venue, year, kind, blurb, slidesUrl, videoUrl }) => ({
           title, venue, year, kind: kind ?? 'talk', blurb, slidesUrl, videoUrl,
         }));
-        return json(results);
+        const upcoming = UPCOMING_TALKS.filter((t) => matchesQuery([t.title, t.venue, t.location], q));
+        return json({
+          upcoming,
+          ...(upcoming.length === 0 && { upcomingNote: 'No upcoming talks are announced right now.' }),
+          past,
+        });
       },
     },
     {
       name: 'list-projects',
-      description:
-        "List Anisha Malde's open source projects and samples (React Native, Vega, Fire TV) with GitHub links. Optionally filter by keyword.",
+      title: 'List projects',
+      annotations: { readOnlyHint: true },
+      description: 'List Anisha\'s open source projects and Vega samples.',
       inputSchema: {
         type: 'object',
         properties: { query: { type: 'string', description: 'Keyword to match in name, summary or stack' } },
       },
       execute: ({ query }) => {
         const q = typeof query === 'string' ? query : '';
-        const results = PROJECTS.filter(
-          (p) => !q || includes(p.name, q) || includes(p.oneLiner, q) || p.stack.some((s) => includes(s, q)),
-        ).map(({ name, oneLiner, stack, githubUrl, role }) => ({ name, oneLiner, stack, githubUrl, role }));
-        return json(results);
+        const projects = PROJECTS.filter((p) => matchesQuery([p.name, p.oneLiner, ...p.stack], q)).map(
+          ({ name, oneLiner, stack, githubUrl, role }) => ({ type: 'project', name, oneLiner, stack, githubUrl, role }),
+        );
+        const samples = VEGA_SAMPLES.filter((v) => matchesQuery([v.name, v.oneLiner, 'vega'], q)).map(
+          ({ name, oneLiner, githubUrl }) => ({ type: 'vega-sample', name, oneLiner, githubUrl }),
+        );
+        return json([...projects, ...samples]);
       },
     },
     {
       name: 'navigate-to-page',
-      description: 'Show a page of the site to the user. Changes only what is on screen.',
+      title: 'Navigate to page',
+      annotations: { readOnlyHint: false },
+      description: 'Show a page of the site.',
       inputSchema: {
         type: 'object',
         properties: { page: { type: 'string', enum: pages, description: 'Page to show' } },
@@ -121,12 +132,13 @@ export function registerWebMcpTools(navigate: (page: PageKey) => void): () => vo
 
   for (const tool of tools) {
     try {
-      // Some implementations return a promise, so swallow rejections rather than break the page
-      Promise.resolve(modelContext.registerTool(tool, options)).catch((err) =>
-        console.warn(`[webmcp] could not register ${tool.name}`, err),
-      );
+      // Some implementations return a promise, so swallow rejections rather than break the page.
+      // An aborted signal only means the effect was cleaned up (StrictMode does this in dev), so stay quiet.
+      Promise.resolve(modelContext.registerTool(tool, options)).catch((err) => {
+        if (!controller.signal.aborted) console.warn(`[webmcp] could not register ${tool.name}`, err);
+      });
     } catch (err) {
-      console.warn(`[webmcp] could not register ${tool.name}`, err);
+      if (!controller.signal.aborted) console.warn(`[webmcp] could not register ${tool.name}`, err);
     }
   }
 

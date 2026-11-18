@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "refresh:posts": "node scripts/fetch-devto.mjs"
+    "refresh:posts": "node scripts/fetch-devto.mjs",
+    "eval:webmcp": "vite build --ssr scripts/webmcp-eval.ts --outDir node_modules/.cache/webmcp-eval --emptyOutDir --logLevel error && node node_modules/.cache/webmcp-eval/webmcp-eval.js"
   },
   "dependencies": {
     "framer-motion": "^12.42.2",

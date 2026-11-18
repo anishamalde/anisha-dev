@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { BLOG_POSTS } from "../data";
+import { searchPosts } from "../search";
 
 export function Blog() {
   const [search, setSearch] = useState("");
@@ -11,17 +12,10 @@ export function Blog() {
     return ["all", ...Array.from(set)];
   }, []);
 
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return BLOG_POSTS.filter((p) => {
-      const matchesTag = activeTag === "all" || p.tags.includes(activeTag);
-      const matchesSearch =
-        !q ||
-        p.title.toLowerCase().includes(q) ||
-        p.excerpt.toLowerCase().includes(q);
-      return matchesTag && matchesSearch;
-    });
-  }, [search, activeTag]);
+  const filtered = useMemo(
+    () => searchPosts(BLOG_POSTS, search, activeTag),
+    [search, activeTag],
+  );
 
   return (
     <div className="page">
